@@ -4,7 +4,7 @@
 
 Pytorch implementation for "Dual-Stream Knowledge-Preserving Hashing for Unsupervised Video Retrieval".
 
-We build DKPH based on [BERT] (https://github.com/codertimo/BERT-pytorch) and [BTH] (https://github.com/Lily1994/BTH).
+We build DKPH based on [BERT](https://github.com/codertimo/BERT-pytorch) and [BTH](https://github.com/Lily1994/BTH).
 
 ## Requirements
 
