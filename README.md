@@ -20,7 +20,7 @@ You can download them from Baiduyun disk.
 
 FCV: https://pan.baidu.com/s/1i65ccHv
 
-Similarity matrix: coming soon.
+Similarity matrix: https://pan.baidu.com/s/1vKo8JaVa9QLKBrXeIw_ibw?pwd=jdds .
 
 
 
