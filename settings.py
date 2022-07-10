@@ -30,8 +30,8 @@ test_feat_path = data_root+'fcv_test_feats.h5'
 label_path = data_root+'fcv_test_labels.mat'
 
 
-train_assist_path = home_root+'data/train_assit.h5' 
-latent_feat_path = home_root+'data/latent_feats.h5'
-anchor_path = home_root+'data/anchors.h5'
+train_assist_path = home_root+'data/train_assit.h5'  #refer BTH
+latent_feat_path = home_root+'data/latent_feats.h5' #refer BTH
+anchor_path = home_root+'data/anchors.h5' #refer BTH
 save_dir = home_root+'models/' + dataset
 file_path = save_dir + '_bits_' + str(nbits)
