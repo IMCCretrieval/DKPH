@@ -27,10 +27,3 @@ Similarity matrix: https://pan.baidu.com/s/1vKo8JaVa9QLKBrXeIw_ibw?pwd=jdds .
 ### Training 
 python train_dkph.py
 
-
-
-
-
-code coming soon.
-
-
