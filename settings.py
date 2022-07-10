@@ -23,7 +23,7 @@ nnachors = 2000
 
 data_root = '/home2/lipd/fcv/'  #to save large data files
 home_root = '/home/lipd/DKPH/'
-sim_path = data_root+'sim_matrix_3.h5'
+sim_path = data_root+'sim_matrix.h5'
 
 train_feat_path = data_root+'fcv_train_feats.h5'
 test_feat_path = data_root+'fcv_test_feats.h5'
