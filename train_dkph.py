@@ -64,15 +64,15 @@ while True:
         bb2,frame2,hid2 = model.forward(data["mask_input"][:,max_frames:,:])
         sim = bb1.mul(bb2)         
         sim = torch.sum(sim,1)/nbits
-        nei_loss = torch.sum((1*data["is_similar"].float()-sim)**2)/batchsize  
-        mask_loss = (torch.sum((frame1-data["visual_word"][:,:max_frames,:])**2)\
+        bsim_loss = torch.sum((1*data["is_similar"].float()-sim)**2)/batchsize  
+        recon_loss = (torch.sum((frame1-data["visual_word"][:,:max_frames,:])**2)\
                   +torch.sum((frame2-data["visual_word"][:,max_frames:,:])**2))\
                   /(2*max_frames*feature_size*batchsize)
 
         weight1=0.5*(1-data["is_similar"])
         weight1=weight1.reshape(batchsize,1)
-        mu_loss = (torch.sum((torch.mean(hid1,1)-data['n1'])**2)+torch.sum((torch.mean(hid2,1)-data['n2'])**2))/(hidden_size*batchsize) + 0.1*criterion(torch.mean(hid1,1),weight1* data['n1'],weight1*data['n2'])
-        loss = mask_loss +0.9*mu_loss + 0.11*nei_loss
+        tsim_loss = (torch.sum((torch.mean(hid1,1)-data['n1'])**2)+torch.sum((torch.mean(hid2,1)-data['n2'])**2))/(hidden_size*batchsize) + 0.1*criterion(torch.mean(hid1,1),weight1* data['n1'],weight1*data['n2'])
+        loss = recon_loss +0.9*tsim_loss + 0.11*bsim_loss
         loss.backward()
         optimizer.step()
         
@@ -80,9 +80,9 @@ while True:
         infos['iter'] = itera
         infos['epoch'] = epoch
         if itera%20 == 0 or batchsize<batch_size:  
-            print 'Epoch:%d Step:[%d/%d]  neiloss: %.2f maskloss: %.2f mu_loss: %.2f' \
-            % (epoch, i, total_len, nei_loss.data.cpu().numpy(),\
-               mask_loss.data.cpu().numpy(),mu_loss.data.cpu().numpy())
+            print 'Epoch:%d Step:[%d/%d]  bsim_loss: %.2f recon_loss: %.2f tsim_loss: %.2f' \
+            % (epoch, i, total_len, bsim_loss.data.cpu().numpy(),\
+               recon_loss.data.cpu().numpy(),tsim_loss.data.cpu().numpy())
 
     
     torch.save(model.state_dict(), file_path + '/dkph_16bits_1016.pth')
