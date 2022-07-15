@@ -3,7 +3,7 @@ import torch.nn as nn
 from torch.autograd import Variable, Function
 
 import sys 
-sys.path.append("/home/lipd/DKPH/utils/") #notice that the path need be changed when the filename is renamed.
+sys.path.append("/home/xxx/DKPH/utils/") #notice that the path need be changed when the filename is renamed.
 from args import nbits,hidden_size
 from .transformer import TransformerBlock
 from .embedding import BERTEmbedding
