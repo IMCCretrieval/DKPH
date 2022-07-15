@@ -21,8 +21,8 @@ hidden_size = 256
 test_batch_size = 256
 nnachors = 2000
 
-data_root = '/home2/lipd/fcv/'  #to save large data files
-home_root = '/home/lipd/DKPH/'
+data_root = '/home2/xxx/fcv/'  #to save large data files
+home_root = '/home/xxx/DKPH/'
 sim_path = data_root+'sim_matrix.h5'
 
 train_feat_path = data_root+'fcv_train_feats.h5'
