@@ -88,9 +88,7 @@ while True:
     torch.save(model.state_dict(), file_path + '/dkph_16bits_1016.pth')
 
     torch.save(optimizer.state_dict(), optimizer_pth_path)
-    if epoch>45:
-        model.eval()
-        evaluate(model, test_feat_path, label_path ,45600)
+
     with open(os.path.join(file_path, 'infos.pkl'), 'wb') as f:
         pickle.dump(infos, f)
     with open(os.path.join(file_path, 'histories.pkl'), 'wb') as f:
