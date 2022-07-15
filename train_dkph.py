@@ -17,7 +17,7 @@ from data import get_train_loader
 
 
 
-# sys.path.append("/home/lipd/DKPH/") #notice that the path need be changed when the filename is renamed.
+# sys.path.append("/home/xxx/DKPH/") #notice that the path need be changed when the filename is renamed.
 if not os.path.exists(file_path):
     os.makedirs(file_path)
 
