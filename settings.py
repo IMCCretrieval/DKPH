@@ -4,7 +4,7 @@ import time
 dataset = 'fcv'  # type=str 
 workers = 8 # type=int 
 batch_size = 256 #type=int 
-num_epochs = 50 # type=int 
+num_epochs = 48 # type=int 
 use_cuda = True
 use_checkpoint = False
 lr = 3e-4 #type=float 
