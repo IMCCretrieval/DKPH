@@ -1,4 +1,4 @@
-## DKPH -- ECCV22
+## Dual-Stream Knowledge-Preserving Hashing for Unsupervised Video Retrieval -- ECCV22
 
 
 
